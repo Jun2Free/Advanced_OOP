@@ -27,11 +27,29 @@ public:
 class Bicycle : protected Vehicle {
 public:
     bool kickstand = true;
+    void Wheels(int w) {
+        wheels = w;
+    }
+    void Color(std::string c) {
+        color = c;
+    }
+    void Print() {
+        std::cout << "This " << color << " Bicycle has " << wheels << " wheels!\n";
+    }
 };
 
 class Scooter : private Vehicle {
 public:
     bool electric = false;
+    void Wheels(int w) {
+        wheels = w;
+    }
+    void Color(std::string c) {
+        color = c;
+    }
+    void Print() {
+        std::cout << "This " << color << " Scooter has " << wheels << " wheels!\n";
+    }
 };
 
 int main()
@@ -45,15 +63,19 @@ int main()
     // In protected case, It is not accessible to base class from the inherited class
     // but, it is accessible to the inherited class from other functions.
     Bicycle bicycle;
-    bicycle.wheels = 2;                         // not accessible
-    bicycle.color = "yellow";                   // not accessible
+    //bicycle.wheels = 2;                         // not accessible
+    bicycle.Wheels(2);
+    //bicycle.color = "yellow";                   // not accessible
+    bicycle.Color("yellow");
     std::cout << bicycle.kickstand << "\n";
     bicycle.Print();                            // not accessible
 
     // In Private case, It is not accessible to base class from the inherited class
     Scooter scooter;
-    scooter.wheels = 2;                         // not accessible
-    scooter.color = "black";                    // not accessible
+    //scooter.wheels = 2;                         // not accessible
+    scooter.Wheels(2);
+    //scooter.color = "black";                    // not accessible
+    scooter.Color("black");
     std::cout << scooter.electric << "\n";
     scooter.Print();                            // not accessible
 };
