@@ -1,3 +1,6 @@
+// overloading: return type and name are same but parameters are diffent.
+// oberriding: subclass 에서 base class 의 형태와 동일하게 선언하여 사용
+
 #include <iostream>
 #include <string>
 
