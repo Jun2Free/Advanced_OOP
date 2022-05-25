@@ -14,12 +14,12 @@ public:
 
 class Cat : Animal {
 public:
-    std::string Talk() const { return std::string("Meow"); }
+    std::string Talk() const override { return std::string("Meow"); }
 };
 
 class Dog : Animal {
 public:
-    std::string Talk() const { return std::string("Woof"); }
+    std::string Talk() const override { return std::string("Woof"); }
 };
 
 int main(void) {
